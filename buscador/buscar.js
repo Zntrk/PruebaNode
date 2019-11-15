@@ -18,7 +18,7 @@ let mostrarDatos = (archivo, pais, anio) => {
 
             })
             .on('end', () => {
-                console.log('Archivo CSV procesado  con exito');
+                console.log('');
             });
 
 
@@ -39,10 +39,10 @@ let guardarDatos = (archivo, pais, anio) => {
             .on('data', (row) => {
                 const filas = Object.assign(row);
                 console.log(row);
-
+                const ndata = Object.assign(row)
             })
             .on('end', () => {
-                console.log('Archivo CSV procesado  con exito');
+                console.log('');
             });
 
         fs.writeFile(`resultados/result+${pais}+${anio}.txt`, ndata, (err) => {
