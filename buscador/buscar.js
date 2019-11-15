@@ -15,8 +15,7 @@ let mostrarDatos = (archivo, pais, anio) => {
             .on('data', (row) => {
                 const filas = Object.assign(row);
                 if (filas === pais) {
-                    const ndata = Object.assign(row);
-                    console.log(row);
+
                 }
 
             })
@@ -37,7 +36,6 @@ let guardarDatos = (archivo, pais, anio) => {
             return;
         }
 
-        const nedata
         fs.createReadStream(String(archivo))
             .pipe(csv())
             .on('data', (row) => {
