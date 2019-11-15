@@ -10,13 +10,11 @@ let mostrarDatos = (archivo, pais, anio) => {
         }
 
 
-        fs.createReadStream(String(archivo))
+        fs.createReadStream('datos.csv')
             .pipe(csv())
             .on('data', (row) => {
                 const filas = Object.assign(row);
-                if (filas === pais) {
-
-                }
+                console.log(row);
 
             })
             .on('end', () => {
@@ -36,14 +34,11 @@ let guardarDatos = (archivo, pais, anio) => {
             return;
         }
 
-        fs.createReadStream(String(archivo))
+        fs.createReadStream('datos.csv')
             .pipe(csv())
             .on('data', (row) => {
                 const filas = Object.assign(row);
-                if (filas === pais) {
-                    const ndata = Object.assign(row);
-                    console.log(row);
-                }
+                console.log(row);
 
             })
             .on('end', () => {
